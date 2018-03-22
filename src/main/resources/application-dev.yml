@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  tomcat.uri-encoding: UTF-8
+  compression:
+    enabled: true
+  connection-timeout: 1000s
+
+
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/drhat?&useUnicode=true&characterEncoding=utf8
+      username: hjj
+      password: hjj
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: true
+
+
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+    multipart:
+      max-file-size: 1024Mb
+      max-request-size: 2048Mb
+  messages:
+    encoding: utf-8
+  output:
+    ansi:
+      enabled: detect
+  thymeleaf:
+    cache: false
+    check-template: true
+    content-type: text/html
+    enabled: true
+    mode: HTML
+    prefix: classpath:/templates/
+  couchbase:
+    env:
+      endpoints:
+        query:
+
+logging:
+  path: /home/hjj/IdeaProjects/springboot/src/
+  level:
+     org.springframework.web: INFO
+     com.junf.drhat: DEBUG
+
